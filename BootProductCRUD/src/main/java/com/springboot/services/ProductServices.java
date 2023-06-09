@@ -41,17 +41,28 @@ public class ProductServices {
 		}
 		return null;
 	}
-	
+
 	public Product findProductByName(String name) {
-		if(repo.findProductByName(name)!=null) {
+		if (repo.findProductByName(name) != null) {
 			return repo.findProductByName(name);
 		}
 		return null;
 	}
-	
-	public List<Product> getAllProducts(){
+
+	public List<Product> getAllProducts() {
 		return repo.findAll();
 	}
+
+	public String deleteProduct(int id) {
+		if (repo.findById(id).get() != null) {
+			repo.deleteById(id);
+			return "Deletion Successful, Product id-> "+id;
+		}
+		return "DEletion Failed";
+	}
 	
-	
+	public String clearProductTable() {
+		repo.deleteAll();
+		return "Deleted all datas from Product Table";
+	}
 }

@@ -8,7 +8,7 @@ import com.springboot.entities.Product;
 
 public interface ProductRepo extends JpaRepository<Product,Integer>{
 	
-	@Query("from Product p where p.name = :name")
+	@Query("from Product p where p.pName = :name")
 	public Product findProductByName(@Param("name") String name);
 }
 
