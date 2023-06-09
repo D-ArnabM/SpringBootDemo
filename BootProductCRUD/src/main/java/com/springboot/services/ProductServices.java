@@ -14,7 +14,7 @@ public class ProductServices {
 	private ProductRepo repo;
 
 	public Product addProduct(Product p) {
-		if (repo.existsById(p.getpId())) {
+		if (!repo.existsById(p.getpId())) {
 			return repo.save(p);
 		}
 		return null;
