@@ -9,7 +9,6 @@ import jakarta.persistence.Table;
 @Entity
 public class Product {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int pId;
 	private String pName;
 	private long pQuantity;
